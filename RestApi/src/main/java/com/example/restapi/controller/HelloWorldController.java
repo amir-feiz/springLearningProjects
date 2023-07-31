@@ -1,0 +1,14 @@
+package com.example.restapi.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloWorldController {
+
+    @GetMapping("/helloString")
+    public String printHello(){
+        return "hello my friends";
+    }
+
+}
