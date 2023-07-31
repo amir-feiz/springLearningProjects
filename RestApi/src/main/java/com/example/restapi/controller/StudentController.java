@@ -1,10 +1,7 @@
 package com.example.restapi.controller;
 
 import com.example.restapi.model.Student;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +46,12 @@ public class StudentController {
                                @RequestParam String password
     ){
         return new Student(name,family,username,password);
+    }
+
+    @PostMapping("/student-create")
+    public Student createStudent(@RequestBody Student student){
+        return new Student(student.getName(),student.getFamily(),
+                student.getUsername(),student.getPassword());
     }
 
 }
