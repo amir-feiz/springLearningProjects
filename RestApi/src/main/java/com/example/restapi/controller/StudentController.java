@@ -2,6 +2,8 @@ package com.example.restapi.controller;
 
 import com.example.restapi.model.Student;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,9 +11,10 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequestMapping("student")
 public class StudentController {
 
-    @GetMapping("/get-student")
+    @GetMapping("/get")
     public Student sendStudent(){
         return new Student(
                 "amir",
@@ -21,7 +24,7 @@ public class StudentController {
         );
     }
 
-    @GetMapping("/get-students")
+    @GetMapping("/get-all")
     public List<Student> sendStudents(){
         List<Student> students = new ArrayList<>();
         students.add(new Student("amir", "feiz","amir-uname","1"));
@@ -32,7 +35,7 @@ public class StudentController {
         return students;
     }
 
-    @GetMapping("get-student/{name}/{family}/{username}/{password}")
+    @GetMapping("get/{name}/{family}/{username}/{password}")
     public Student pathVariableStudent(@PathVariable String name,
                                        @PathVariable String family,
                                        @PathVariable String username,
@@ -41,7 +44,7 @@ public class StudentController {
         return new Student(name,family,username,password);
     }
 
-    @GetMapping("/get-student-params")
+    @GetMapping("/get-params")
     public Student pramStudent(@RequestParam String name,
                                @RequestParam String family,
                                @RequestParam String username,
@@ -50,17 +53,22 @@ public class StudentController {
         return new Student(name,family,username,password);
     }
 
-    @PostMapping("/student-create")
+    @PostMapping("/create")
     public Student createStudent(@RequestBody Student student){
         return new Student(student.getName(),student.getFamily(),
                 student.getUsername(),student.getPassword());
     }
 
-    @PutMapping("/student/{id}/update")
+    @PutMapping("/{id}/update")
     public Student updateStudent(@RequestBody Student student,@PathVariable String id){
         log.info("student " + id + " has been updated");
         return new Student(student.getName(),student.getFamily(),
                 student.getUsername(),student.getPassword());
     }
 
+    @DeleteMapping("/{id}/delete")
+    public ResponseEntity<Student> deleteStudent(@PathVariable String id){
+        log.info("student " + id + " has been deleted");
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
