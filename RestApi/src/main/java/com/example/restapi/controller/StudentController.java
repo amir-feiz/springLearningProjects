@@ -1,11 +1,13 @@
 package com.example.restapi.controller;
 
 import com.example.restapi.model.Student;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RestController
 public class StudentController {
 
@@ -50,6 +52,13 @@ public class StudentController {
 
     @PostMapping("/student-create")
     public Student createStudent(@RequestBody Student student){
+        return new Student(student.getName(),student.getFamily(),
+                student.getUsername(),student.getPassword());
+    }
+
+    @PutMapping("/student/{id}/update")
+    public Student updateStudent(@RequestBody Student student,@PathVariable String id){
+        log.info("student " + id + " has been updated");
         return new Student(student.getName(),student.getFamily(),
                 student.getUsername(),student.getPassword());
     }
