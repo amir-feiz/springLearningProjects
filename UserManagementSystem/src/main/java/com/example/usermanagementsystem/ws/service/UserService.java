@@ -10,6 +10,7 @@ public interface UserService {
 
     UserEntity createUser(UserEntity user);
     List<UserEntity> getAllUsers();
-
     UserEntity findById(Long id);
+    UserEntity deleteById(Long id);
+
 }
