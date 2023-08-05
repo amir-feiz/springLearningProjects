@@ -38,5 +38,14 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public UserEntity updateById(UserEntity user,Long id) {
+        UserEntity updatedUser = userRepository.findById(id).get();
+        updatedUser.setFirstName(user.getFirstName());
+        updatedUser.setLastName(user.getLastName());
+        userRepository.save(updatedUser);
+        return updatedUser;
+    }
+
 
 }

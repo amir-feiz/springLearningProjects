@@ -13,4 +13,5 @@ public interface UserService {
     UserEntity findById(Long id);
     UserEntity deleteById(Long id);
 
+    UserEntity updateById(UserEntity user,Long id);
 }
