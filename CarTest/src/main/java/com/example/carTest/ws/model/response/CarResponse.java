@@ -1,4 +1,4 @@
-package com.example.cartest.model.response;
+package com.example.carTest.ws.model.response;
 
 import lombok.Getter;
 import lombok.Setter;

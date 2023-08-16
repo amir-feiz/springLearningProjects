@@ -1,4 +1,4 @@
-package com.example.cartest;
+package com.example.carTest;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

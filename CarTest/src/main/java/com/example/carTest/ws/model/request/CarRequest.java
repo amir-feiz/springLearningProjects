@@ -1,4 +1,4 @@
-package com.example.cartest.model.request;
+package com.example.carTest.ws.model.request;
 
 import lombok.Getter;
 import lombok.Setter;

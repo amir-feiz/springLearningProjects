@@ -1,4 +1,4 @@
-package com.example.cartest.model.entity;
+package com.example.carTest.ws.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

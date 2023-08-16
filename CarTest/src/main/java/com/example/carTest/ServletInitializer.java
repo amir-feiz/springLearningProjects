@@ -1,4 +1,4 @@
-package com.example.cartest;
+package com.example.carTest;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

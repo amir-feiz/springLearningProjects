@@ -1,7 +1,7 @@
-package com.example.cartest.service;
+package com.example.carTest.ws.service;
 
-import com.example.cartest.model.request.CarRequest;
-import com.example.cartest.model.response.CarResponse;
+import com.example.carTest.ws.model.request.CarRequest;
+import com.example.carTest.ws.model.response.CarResponse;
 
 import java.util.List;
 

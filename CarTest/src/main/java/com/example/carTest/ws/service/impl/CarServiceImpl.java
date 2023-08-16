@@ -1,20 +1,17 @@
-package com.example.cartest.service.impl;
+package com.example.carTest.ws.service.impl;
 
-import com.example.cartest.model.entity.CarEntity;
-import com.example.cartest.model.request.CarRequest;
-import com.example.cartest.model.response.CarResponse;
-import com.example.cartest.repository.CarRepository;
-import com.example.cartest.service.CarService;
+import com.example.carTest.ws.model.entity.CarEntity;
+import com.example.carTest.ws.model.response.CarResponse;
+import com.example.carTest.ws.repository.CarRepository;
+import com.example.carTest.ws.model.request.CarRequest;
+import com.example.carTest.ws.service.CarService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Stream;
 
 @Service
 @Slf4j
